@@ -877,7 +877,7 @@ textarea {
 
 body {
     overflow-y: hidden;
-    background: #eaeaea
+    background: #fff
 }
 
 #container,
@@ -914,8 +914,8 @@ html {
     position  : absolute;
     right     : 0;
     min-height: 100%;
-    background: #eaeaea;
-    left      : 300px;
+    background: #fff;
+    left      : 280px;
     width     : auto
 }
 
@@ -930,7 +930,7 @@ html {
 
 .left-col {
     background: #ccc;
-    width     : 300px;
+    width     : 260px;
     position  : fixed;
     opacity   : 1;
     transition: all .2s ease-in;
@@ -2184,7 +2184,7 @@ pre .id {
 }
 
 .article {
-    margin       : 100px 80px;
+    margin       : 90px 200px;
     position     : relative;
     border       : 1px solid #ddd;
     border-top   : 1px solid #fff;
