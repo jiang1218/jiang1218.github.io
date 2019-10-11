@@ -457,10 +457,12 @@ sub {
 }
 
 img {
-    border        : 0;
-    vertical-align: middle;
-    max-height     : 100%;
-    margin-left: -40%;
+    border           : 0;
+    /* vertical-align: middle; */
+    max-height       : 100%;
+    display          : block;
+    margin           : 0 auto;
+    /* margin-left   : -40%; */
 }
 
 svg:not(:root) {
@@ -3501,8 +3503,8 @@ pre .id {
     }
 
     #mobile-nav #header {
-        padding: 10px 0 ;
-         box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+        padding   : 10px 0;
+        box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
     }
 
     #mobile-nav #header .profilepic {
@@ -4301,4 +4303,26 @@ a.pswp__share--download:hover {
 .pswp__error-msg a {
     color          : #ccc;
     text-decoration: underline
+}
+
+
+
+
+
+
+/* 自己添加的样式放在了最下面 */
+.article-more-a {
+    width        : 100px;
+    display      : block;
+    border-radius: 20px;
+    text-align   : center;
+    margin       : 50px auto 0;
+    background-color: #222;
+    color:#fff;
+    transition: .6s;
+}
+.article-more-a:hover{
+    color:#222;
+    border:1px solid #222;
+    background-color: #fff;
 }
