@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
@@ -28,31 +29,25 @@
 <meta name="twitter:description" content="git的相关指令操作">
 <meta name="twitter:image" content="http://yoursite.com/2019/10/11/git的使用/git.jpg">
   
-    <link rel="alternative" href="/atom.xml" title="欢迎来到姜哥哥的博客，不会让你失望的" type="application/atom+xml">
+  <link rel="alternative" href="/atom.xml" title="欢迎来到姜哥哥的博客，不会让你失望的" type="application/atom+xml">
   
   
-    <link rel="icon" href="/img/icon.gif">
+  <link rel="icon" href="/img/icon.gif">
   
   <link rel="stylesheet" type="text/css" href="/./main.0cf68a.css">
   <style type="text/css">
-  
     #container.show {
       background: linear-gradient(200deg,#a0cfe4,#e8c37e);
-    }
+    } 
   </style>
   
 
   
 
 
-  <!-- 添加评论功能 -->
-  
 
-  <link rel="stylesheet" href="/lib/gitalk/gitalk.css">
-  <script src="/lib/gitalk/gitalk.min.js"></script>
 
-</head>
-</html>
+</head></html>
 <body>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
@@ -390,28 +385,27 @@
 
 
 
+<div id="gitment-ctn"></div> 
+<link rel="stylesheet" href="//imsun.github.io/gitment/style/default.css">
+<script src="//imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  id: "http://yoursite.com/2019/10/11/git的使用/",
+  owner: 'true',
+  repo: 'https://github.com/jiang1218/jiang1218.github.io.git',
+  oauth: {
+    client_id: '7bfa323130a9959bac0d',
+    client_secret: 'a8ec43a7ce06af2be3731489b23bc25a45625b07',
+  },
+})
+gitment.render('gitment-ctn')
+</script>
 
 
-<!-- 为了评论功能添加的 -->
 
-  
-<div class="gitalk">
-  <div id="gitalk-container"></div>
-  <script type="text/javascript">
-      const gitalk = new Gitalk({
-          clientID: '7bfa323130a9959bac0d',
-          clientSecret: 'a8ec43a7ce06af2be3731489b23bc25a45625b07',
-          repo: 'https://github.com/jiang1218/jiang1218.github.io.git',
-          owner: 'jiang1218',
-          admin: ['jiang1218'],
-          id: md5(location.pathname),      // Ensure uniqueness and length less than 50
-          distractionFreeMode: false  // Facebook-like distraction free mode
-      })
 
-      gitalk.render('gitalk-container')
-  </script>
-</div>
-  
+
+
           </div>
         </div>
       </div>
