@@ -16,7 +16,9 @@
 <meta property="og:site_name" content="欢迎来到姜哥哥的博客，不会让你失望的">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://yoursite.com/2019/10/28/node中的art-template/01.png">
-<meta property="og:updated_time" content="2019-10-28T03:17:16.139Z">
+<meta property="og:image" content="http://yoursite.com/2019/10/28/node中的art-template/02.png">
+<meta property="og:image" content="http://yoursite.com/2019/10/28/node中的art-template/03.png">
+<meta property="og:updated_time" content="2019-10-31T03:29:18.176Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="node中的art-template">
 <meta name="twitter:image" content="http://yoursite.com/2019/10/28/node中的art-template/01.png">
@@ -85,11 +87,9 @@
 				
 					<a class="github" target="_blank" href="https://github.com/jiang1218" title="github"><i class="icon-github"></i></a>
 		        
-					<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
+					<a class="qq" target="_blank" href="/img/qq-via.jpg" title="qq"><i class="icon-qq"></i></a>
 		        
-					<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
-		        
-					<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
+					<a class="weixin" target="_blank" href="/img/wei-via.jpg" title="weixin"><i class="icon-weixin"></i></a>
 		        
 			</div>
 		</nav>
@@ -126,11 +126,9 @@
 					
 						<a class="github" target="_blank" href="https://github.com/jiang1218" title="github"><i class="icon-github"></i></a>
 			        
-						<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
+						<a class="qq" target="_blank" href="/img/qq-via.jpg" title="qq"><i class="icon-qq"></i></a>
 			        
-						<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
-			        
-						<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
+						<a class="weixin" target="_blank" href="/img/wei-via.jpg" title="weixin"><i class="icon-weixin"></i></a>
 			        
 				</div>
 			</nav>
@@ -180,6 +178,46 @@
 <a id="more"></a> 
 
 <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">artTemplate是新一代的高性能JavaScript模板引擎。</span><br></pre></td></tr></table></figure>
+
+<h4 id="第一步-安装"><a href="#第一步-安装" class="headerlink" title="第一步  安装"></a>第一步  安装</h4><ul>
+<li>因为是基于<code>express</code>基础之上使用的，所以一定要先安装 espress<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install --save art-template</span><br><span class="line">npm install --save express-art-template</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h4 id="第二部-配置"><a href="#第二部-配置" class="headerlink" title="第二部  配置"></a>第二部  配置</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">app.engine(<span class="string">'html'</span>, <span class="built_in">require</span>(<span class="string">'express-art-template'</span>));</span><br><span class="line"><span class="comment">// express-art-template 默认的渲染的目录是 views下面的，如果需要修改默认渲染路径如下</span></span><br><span class="line">app.set(<span class="string">'views'</span>, path.join(__dirname, <span class="string">'views'</span>));</span><br></pre></td></tr></table></figure>
+
+<h4 id="模板的基础操作"><a href="#模板的基础操作" class="headerlink" title="模板的基础操作"></a>模板的基础操作</h4><ul>
+<li>下面是服务端的代码</li>
+<li>res.render 将数据返回给浏览器，浏览器将其渲染成页面显示<br><img src="/2019/10/28/node中的art-template/02.png" alt></li>
+<li>html代码<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"X-UA-Compatible"</span> <span class="attr">content</span>=<span class="string">"ie=edge"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>标题<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span>账号：&#123;&#123;$student.name&#125;&#125;&amp;emsp;密码：&#123;&#123;$student.pwd&#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span>下属<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        &#123;&#123;each student&#125;&#125;</span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span>&#123;&#123;$value&#125;&#125;<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">         &#123;&#123;/each&#125;&#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h4 id="模板的高级操作"><a href="#模板的高级操作" class="headerlink" title="模板的高级操作"></a>模板的高级操作</h4><ul>
+<li><p>标准语法</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;&#123;extend<span class="string">'./layout.html'</span>&#125;&#125;  <span class="comment">// 继承了 layout.html 的内容</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// content  是父子模板中某个位置的识别名称，叫什么都可以</span></span><br><span class="line">&#123;&#123; block <span class="string">'content'</span>&#125; &#125;   </span><br><span class="line">    &lt;h1&gt;默认内容&lt;<span class="regexp">/h1&gt;      /</span><span class="comment">// 填写自己的内容，自己的内容会覆盖默认内容</span></span><br><span class="line">&#123;&#123;/ block&#125;&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>示例代码<br><img src="/2019/10/28/node中的art-template/03.png" alt></p>
+<br></li>
+<li><p>适用于<strong>MVC</strong>的模块思想</p>
+<ul>
+<li>用于操作 V 层</li>
+<li>当一个网站的代码，头部 和 尾部 一样的时候，就可以采用模板继承的方式<ul>
+<li>可以使代码 view 层代码，更清晰，模块化更专一</li>
+<li>方便后期维护</li>
+<li>减少代码冗余</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>个人的一些小见解，希望大家会喜欢</p>
+<br>
+<br>
+<br>
+
+<p>​<strong>本文地址：</strong> <a href="https://jiang1218.github.io/" target="_blank" rel="noopener">https://jiang1218.github.io/</a><br><strong>转载请注明出处，谢谢！</strong></p>
+
     
 
     
