@@ -41,7 +41,8 @@
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
     <div class="left-col" q-class="show:isShow">
       
-<div class="overlay" style="background: #4d4d4d"></div>
+<!-- <div class="overlay" style="background: #4d4d4d"></div> -->
+<div class="overlay"></div>
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
@@ -86,9 +87,33 @@
 					<a class="weixin" target="_blank" href="/img/wei-via.jpg" title="weixin"><i class="icon-weixin"></i></a>
 		        
 			</div>
+			<div style=" position: relative; bottom: 0px; width:120%;">
+				<iframe width="100%" style="left: -20px; position: absolute;" frameborder="no" border="0" marginwidth="0" marginheight="0" width=298 height=52 src="//music.163.com/outchain/player?type=2&id=1390536307&auto=1&height=32"></iframe>
+			</div>
 		</nav>
 	</header>		
 </div>
+
+<script >
+	window.onload=function(){
+	var bglist = [];
+	bglist[0] = "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1557893061,4053829165&fm=26&gp=0.jpg";
+	bglist[1] = "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2884859338,886452374&fm=26&gp=0.jpg";
+	bglist[2] = "https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1398218001,2574037951&fm=26&gp=0.jpg";
+	bglist[3] = "https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2519188004,1677228939&fm=26&gp=0.jpg";
+	bglist[4] = "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2211928044,1437636324&fm=15&gp=0.jpg";
+	bglist[5] = "https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3134596763,2078242016&fm=26&gp=0.jpg";
+	var i = 0;
+        var bkg=document.getElementsByClassName("left-col")[0]; 
+        bkg.style.background="url(https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1373128949,2110098436&fm=26&gp=0.jpg)";  
+                function time(){
+                    i<5?i++:i=0; 
+                    //这里控制条件，5是图片数量减一
+                    bkg.style.background="url("+bglist[i]+")"; 
+                }
+                setInterval(time,3000);
+        }
+</script>
 
     </div>
     <div class="mid-col" q-class="show:isShow,hide:isShow|isFalse">
@@ -225,27 +250,6 @@
 
 <!-- 为评论添加的设置 -->
 
-  <div id="gitalk-container"></div>
-  <div id="gitalk-container" style="padding: 0px 30px 0px 30px;"></div> 
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
-<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
-<script type="text/javascript">
-
-if(true){
-	var gitalk = new Gitalk({
-  	clientID: '788433e727caa5ebb17d',
-  	clientSecret: '79a289bf4d748f72d0e8e8c012174b598917f192',
-  	repo: 'https://github.com/jiang1218/jiang1218.github.io.git',
-  	owner: '54479555',
-  	admin: ['[&#39;jiang1218.github.io&#39;,&#39;jiang1218.github.io&#39;]'],
-  	id: '',
-  	distractionFreeMode: 'true'
-})
-gitalk.render('gitalk-container') 
-}
-</script>
-
 
   
     <article id="post-node中的art-template" class="article article-type-post  article-index" itemscope itemprop="blogPost">
@@ -321,27 +325,6 @@ gitalk.render('gitalk-container')
 
 
 <!-- 为评论添加的设置 -->
-
-  <div id="gitalk-container"></div>
-  <div id="gitalk-container" style="padding: 0px 30px 0px 30px;"></div> 
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
-<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
-<script type="text/javascript">
-
-if(true){
-	var gitalk = new Gitalk({
-  	clientID: '788433e727caa5ebb17d',
-  	clientSecret: '79a289bf4d748f72d0e8e8c012174b598917f192',
-  	repo: 'https://github.com/jiang1218/jiang1218.github.io.git',
-  	owner: '54479555',
-  	admin: ['[&#39;jiang1218.github.io&#39;,&#39;jiang1218.github.io&#39;]'],
-  	id: '',
-  	distractionFreeMode: 'true'
-})
-gitalk.render('gitalk-container') 
-}
-</script>
 
 
   
@@ -419,27 +402,6 @@ gitalk.render('gitalk-container')
 
 <!-- 为评论添加的设置 -->
 
-  <div id="gitalk-container"></div>
-  <div id="gitalk-container" style="padding: 0px 30px 0px 30px;"></div> 
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
-<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
-<script type="text/javascript">
-
-if(true){
-	var gitalk = new Gitalk({
-  	clientID: '788433e727caa5ebb17d',
-  	clientSecret: '79a289bf4d748f72d0e8e8c012174b598917f192',
-  	repo: 'https://github.com/jiang1218/jiang1218.github.io.git',
-  	owner: '54479555',
-  	admin: ['[&#39;jiang1218.github.io&#39;,&#39;jiang1218.github.io&#39;]'],
-  	id: '',
-  	distractionFreeMode: 'true'
-})
-gitalk.render('gitalk-container') 
-}
-</script>
-
 
   
     <article id="post-移动端布局" class="article article-type-post  article-index" itemscope itemprop="blogPost">
@@ -516,27 +478,6 @@ gitalk.render('gitalk-container')
 
 <!-- 为评论添加的设置 -->
 
-  <div id="gitalk-container"></div>
-  <div id="gitalk-container" style="padding: 0px 30px 0px 30px;"></div> 
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
-<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
-<script type="text/javascript">
-
-if(true){
-	var gitalk = new Gitalk({
-  	clientID: '788433e727caa5ebb17d',
-  	clientSecret: '79a289bf4d748f72d0e8e8c012174b598917f192',
-  	repo: 'https://github.com/jiang1218/jiang1218.github.io.git',
-  	owner: '54479555',
-  	admin: ['[&#39;jiang1218.github.io&#39;,&#39;jiang1218.github.io&#39;]'],
-  	id: '',
-  	distractionFreeMode: 'true'
-})
-gitalk.render('gitalk-container') 
-}
-</script>
-
 
   
     <article id="post-git的使用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
@@ -612,27 +553,6 @@ gitalk.render('gitalk-container')
 
 
 <!-- 为评论添加的设置 -->
-
-  <div id="gitalk-container"></div>
-  <div id="gitalk-container" style="padding: 0px 30px 0px 30px;"></div> 
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
-<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
-<script type="text/javascript">
-
-if(true){
-	var gitalk = new Gitalk({
-  	clientID: '788433e727caa5ebb17d',
-  	clientSecret: '79a289bf4d748f72d0e8e8c012174b598917f192',
-  	repo: 'https://github.com/jiang1218/jiang1218.github.io.git',
-  	owner: '54479555',
-  	admin: ['[&#39;jiang1218.github.io&#39;,&#39;jiang1218.github.io&#39;]'],
-  	id: '',
-  	distractionFreeMode: 'true'
-})
-gitalk.render('gitalk-container') 
-}
-</script>
 
 
   
@@ -729,15 +649,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">mvc,mvvm</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">mongodb</a>
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -746,6 +662,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">art-template</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">mongodb</a>
               </li>
             
             <div class="clearfix"></div>
